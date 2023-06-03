@@ -1,6 +1,6 @@
-@Library('jenkins_shared_lib')
+@Library('jenkins_shared_lib') 
 
-pipeline {
+pipeline{
     agent any
     parameters{
         choice(name: 'action', choices: 'create\ndelete', description: 'Choose create/Destroy')
@@ -8,13 +8,13 @@ pipeline {
     }
 
     stages {
-        stage("git checkpot"){
+        stage("git checkout"){
              when { expression {  params.action == 'create' } }
            steps{
 
-        checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/DevidasSP/projectfile.git']])
-        }
-        
-        }
+            checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/DevidasSP/projectfile.git']])
     }
-}
+        
+    }
+    }
+    }
