@@ -2,10 +2,10 @@
 
 pipeline{
     agent any
-   // parameters{
-       // choice(name: 'action', choices: 'create\ndelete', description: 'Choose create/Destroy')
-      //  string(name: 'aws_account_id', description: " AWS Account ID", defaultValue: '966120781179')
-    //}
+   parameters{
+        choice(name: 'action', choices: 'create\ndelete', description: 'Choose create/Destroy')
+        string(name: 'aws_account_id', description: " AWS Account ID", defaultValue: '966120781179')
+    }
 
     stages {
         stage("git checkout"){
