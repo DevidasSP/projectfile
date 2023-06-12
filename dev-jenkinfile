@@ -8,6 +8,7 @@ pipeline{
     }
 
     stages {
+
         stage("git checkout"){
            
            steps{
@@ -16,7 +17,7 @@ pipeline{
             }
         
         }
-    }
+  
      stage("Unit Test Maven"){
                 when { expression {  params.action == 'create' } }
             steps{
